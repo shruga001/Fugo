@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f give Command",
+    "Description": "Give coins to another member.",
+    "color": 8388736,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`give amount @user` - Give coins to another member.",
+            "inline": false
+        }
+    ]
+}

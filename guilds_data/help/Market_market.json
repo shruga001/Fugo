@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f market Command",
+    "Description": "View the market board.",
+    "color": 13938423,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`market` - View the market board.",
+            "inline": false
+        }
+    ]
+}

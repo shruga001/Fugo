@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f daily Command",
+    "Description": "Claim your daily reward.",
+    "color": 15105570,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`daily` - Claim your daily reward.",
+            "inline": false
+        }
+    ]
+}

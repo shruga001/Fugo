@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f bal Command",
+    "Description": "Check your balance.",
+    "color": 8388736,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`bal` - Check your balance.",
+            "inline": false
+        }
+    ]
+}

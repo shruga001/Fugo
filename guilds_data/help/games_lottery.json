@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f lottery Command",
+    "Description": "scratch a lottery Ticket and win coins.",
+    "color": 5289784,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`lottery amount` - Participate in the server lottery.",
+            "inline": false
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f rank Command",
+    "Description": "Check your rank.",
+    "color": 8388736,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`rank` - Check your rank.",
+            "inline": false
+        }
+    ]
+}

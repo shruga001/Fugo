@@ -1,0 +1,23 @@
+.vscode/
+__pychache__/
+assets/
+cards/
+cropped/
+media/
+node_modules/
+8ec34f6b-d4a0-46aa-8ed6-20cd44331055.png
+blackjack.png
+Board planning completed.png
+Board planning uncensored.png
+Board planning V2.png
+Board planning.png
+fugo-mine.js
+gift.p
+non.py
+op.py
+package-lock.json
+package.json
+prev.py
+test.py
+.env
+gift.py

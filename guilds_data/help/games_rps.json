@@ -1,0 +1,17 @@
+{
+    "Title": "\u2699\ufe0f rps Command",
+    "Description": "Play rock-paper-scissors.",
+    "color": 5289784,
+    "fields": [
+        {
+            "Title": "Usage [ against bot]",
+            "Value": "`rps amount` - Play rock-paper-scissors.",
+            "inline": false
+        },
+        {
+            "Title": "Usage [ against user]",
+            "Value": "`rps amount @user` - Play rock-paper-scissors against another user.",
+            "inline": false
+        }
+    ]
+}

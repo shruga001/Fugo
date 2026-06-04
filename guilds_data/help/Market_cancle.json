@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f cancle Command",
+    "Description": "Cancel your market listings.",
+    "color": 13938423,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`cancle item_name` - Cancel your subscriptions.",
+            "inline": false
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f catch Command",
+    "Description": "Catch monsters or items.",
+    "color": 8388736,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`catch` - Catch monsters or items.",
+            "inline": false
+        }
+    ]
+}

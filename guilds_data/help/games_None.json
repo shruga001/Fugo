@@ -1,0 +1,37 @@
+{
+    "Title": "\ud83d\udcc2 games Commands",
+    "Description": "List of commands under the games category.",
+    "color": 5289784,
+    "fields": [
+        {
+            "Title": "bet",
+            "Value": "Play a game of snake eyes.",
+            "inline": false
+        },
+        {
+            "Title": "blackjack",
+            "Value": "Play blackjack against the dealer.",
+            "inline": false
+        },
+        {
+            "Title": "fish",
+            "Value": "Catch fish and earn rewards.",
+            "inline": false
+        },
+        {
+            "Title": "lottery",
+            "Value": "Participate in the server lottery.",
+            "inline": false
+        },
+        {
+            "Title": "rps",
+            "Value": "Play rock-paper-scissors.",
+            "inline": false
+        },
+        {
+            "Title": "truthanddare",
+            "Value": "Play truth or dare.",
+            "inline": false
+        }
+    ]
+}

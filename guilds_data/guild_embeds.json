@@ -1,0 +1,14 @@
+{            "Title":"Preview embeds",
+            "Description":"This is a preview embed",
+            "channel":0,
+            "message_id":0,
+            "fields":[
+                    {
+                        "Title":"Preview Field","Value":"This is a preview Field, with inline = False","inline":"False"
+                    },
+                    {
+                        "Title":"Preview Field 2","Value":"This is a preview Field 2, with inline = False","inline":"False"
+                    }
+                ],
+            "color":"#79F6FC"
+}

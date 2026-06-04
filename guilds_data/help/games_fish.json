@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f fish Command",
+    "Description": "Catch fish and earn rewards.",
+    "color": 5289784,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`fish` - Catch fish and earn rewards.",
+            "inline": false
+        }
+    ]
+}

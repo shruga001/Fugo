@@ -1,0 +1,17 @@
+{
+    "Title": "\u2699\ufe0f blackjack Command",
+    "Description": "Play blackjack against the dealer.",
+    "color": 5289784,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`blackjack amount` - Play blackjack against the dealer.",
+            "inline": false
+        },
+        {
+            "Title": "Aliases",
+            "Value": "bj",
+            "inline": false
+        }
+    ]
+}

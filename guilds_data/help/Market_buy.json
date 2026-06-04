@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f buy Command",
+    "Description": "Buy items from the market.",
+    "color": 13938423,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`buy item_name` - Buy items from the market.",
+            "inline": false
+        }
+    ]
+}

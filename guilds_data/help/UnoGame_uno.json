@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f uno Command",
+    "Description": "Starts a new UNO game with your server members.",
+    "color": 2836711,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`uno` - Starts a new UNO game with your server members.",
+            "inline": false
+        }
+    ]
+}

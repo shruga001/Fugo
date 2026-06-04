@@ -1,0 +1,17 @@
+{
+    "Title": "\u2699\ufe0f Leaderboard Command",
+    "Description": "View the server leaderboard.",
+    "color": 8388736,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`Leaderboard` - View the server leaderboard sorted by coins. \n`Leaderboard messages` - view the leaderboard sorted by messages sent.",
+            "inline": false
+        },
+        {
+            "Title": "Aliases",
+            "Value": "lb,top",
+            "inline": false
+        }
+    ]
+}

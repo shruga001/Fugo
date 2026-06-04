@@ -1,0 +1,17 @@
+{
+    "owner" : 0,
+    "co_owner" : [],
+    "allowed_channels":[],
+    "TND_channel":[],
+    "UNO_channel":[],
+    "monster_channel":0,
+    "staff_roles":[],
+    "bot_manager_role":[],
+    "critical_update_channel":0,
+    "message_channels":[],
+    "treasury":0,
+    "setup":false,
+    "last_monster":null,
+    "active_monster":false,
+    "current_monster":{}
+}

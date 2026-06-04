@@ -1,0 +1,262 @@
+{
+  "2_of_Clubs": {
+    "id": "1358035476099108884",
+    "name": "2_of_Clubs",
+    "animated": false
+  },
+  "2_of_Diamonds": {
+    "id": "1358035493018800249",
+    "name": "2_of_Diamonds",
+    "animated": false
+  },
+  "2_of_Hearts": {
+    "id": "1358035507656790058",
+    "name": "2_of_Hearts",
+    "animated": false
+  },
+  "2_of_Spades": {
+    "id": "1358035518578884751",
+    "name": "2_of_Spades",
+    "animated": false
+  },
+  "3_of_Clubs": {
+    "id": "1358035530117283900",
+    "name": "3_of_Clubs",
+    "animated": false
+  },
+  "3_of_Diamonds": {
+    "id": "1358035539416187111",
+    "name": "3_of_Diamonds",
+    "animated": false
+  },
+  "3_of_Hearts": {
+    "id": "1358035551709827228",
+    "name": "3_of_Hearts",
+    "animated": false
+  },
+  "3_of_Spades": {
+    "id": "1358035560651821086",
+    "name": "3_of_Spades",
+    "animated": false
+  },
+  "4_of_Clubs": {
+    "id": "1358035574711255080",
+    "name": "4_of_Clubs",
+    "animated": false
+  },
+  "4_of_Diamonds": {
+    "id": "1358035652733702207",
+    "name": "4_of_Diamonds",
+    "animated": false
+  },
+  "4_of_Hearts": {
+    "id": "1358035674212864106",
+    "name": "4_of_Hearts",
+    "animated": false
+  },
+  "4_of_Spades": {
+    "id": "1358035715262517389",
+    "name": "4_of_Spades",
+    "animated": false
+  },
+  "5_of_Clubs": {
+    "id": "1358035730781176099",
+    "name": "5_of_Clubs",
+    "animated": false
+  },
+  "5_of_Diamonds": {
+    "id": "1358035745687732304",
+    "name": "5_of_Diamonds",
+    "animated": false
+  },
+  "5_of_Hearts": {
+    "id": "1358035761210855610",
+    "name": "5_of_Hearts",
+    "animated": false
+  },
+  "5_of_Spades": {
+    "id": "1358035873764999234",
+    "name": "5_of_Spades",
+    "animated": false
+  },
+  "6_of_Clubs": {
+    "id": "1358035892165677186",
+    "name": "6_of_Clubs",
+    "animated": false
+  },
+  "6_of_Diamonds": {
+    "id": "1358035913405632654",
+    "name": "6_of_Diamonds",
+    "animated": false
+  },
+  "6_of_Hearts": {
+    "id": "1358035935496769776",
+    "name": "6_of_Hearts",
+    "animated": false
+  },
+  "6_of_Spades": {
+    "id": "1358035979423977685",
+    "name": "6_of_Spades",
+    "animated": false
+  },
+  "7_of_Clubs": {
+    "id": "1358036000009359401",
+    "name": "7_of_Clubs",
+    "animated": false
+  },
+  "7_of_Diamonds": {
+    "id": "1358036020041351249",
+    "name": "7_of_Diamonds",
+    "animated": false
+  },
+  "7_of_Hearts": {
+    "id": "1358036046108954685",
+    "name": "7_of_Hearts",
+    "animated": false
+  },
+  "7_of_Spades": {
+    "id": "1358036062613803029",
+    "name": "7_of_Spades",
+    "animated": false
+  },
+  "8_of_Clubs": {
+    "id": "1358036086923722793",
+    "name": "8_of_Clubs",
+    "animated": false
+  },
+  "8_of_Diamonds": {
+    "id": "1358036104246202410",
+    "name": "8_of_Diamonds",
+    "animated": false
+  },
+  "8_of_Hearts": {
+    "id": "1358036122097160244",
+    "name": "8_of_Hearts",
+    "animated": false
+  },
+  "8_of_Spades": {
+    "id": "1358036147191939259",
+    "name": "8_of_Spades",
+    "animated": false
+  },
+  "9_of_Clubs": {
+    "id": "1358036167634718791",
+    "name": "9_of_Clubs",
+    "animated": false
+  },
+  "9_of_Diamonds": {
+    "id": "1358036183929589781",
+    "name": "9_of_Diamonds",
+    "animated": false
+  },
+  "9_of_Hearts": {
+    "id": "1358036199603966023",
+    "name": "9_of_Hearts",
+    "animated": false
+  },
+  "9_of_Spades": {
+    "id": "1358036216297029886",
+    "name": "9_of_Spades",
+    "animated": false
+  },
+  "10_of_Clubs": {
+    "id": "1358036234844373043",
+    "name": "10_of_Clubs",
+    "animated": false
+  },
+  "10_of_Diamonds": {
+    "id": "1358036254931026011",
+    "name": "10_of_Diamonds",
+    "animated": false
+  },
+  "10_of_Hearts": {
+    "id": "1358036470388232385",
+    "name": "10_of_Hearts",
+    "animated": false
+  },
+  "10_of_Spades": {
+    "id": "1358036486901207090",
+    "name": "10_of_Spades",
+    "animated": false
+  },
+  "Ace_of_Clubs": {
+    "id": "1358036533055193149",
+    "name": "Ace_of_Clubs",
+    "animated": false
+  },
+  "Ace_of_Diamonds": {
+    "id": "1358036555142533171",
+    "name": "Ace_of_Diamonds",
+    "animated": false
+  },
+  "Ace_of_Hearts": {
+    "id": "1358036575887556842",
+    "name": "Ace_of_Hearts",
+    "animated": false
+  },
+  "Ace_of_Spades": {
+    "id": "1358036600646275113",
+    "name": "Ace_of_Spades",
+    "animated": false
+  },
+  "Jack_of_Clubs": {
+    "id": "1358036630232891614",
+    "name": "Jack_of_Clubs",
+    "animated": false
+  },
+  "Jack_of_Diamonds": {
+    "id": "1358036974442905690",
+    "name": "Jack_of_Diamonds",
+    "animated": false
+  },
+  "Jack_of_Hearts": {
+    "id": "1358037004264411307",
+    "name": "Jack_of_Hearts",
+    "animated": false
+  },
+  "Jack_of_Spades": {
+    "id": "1358037064842739934",
+    "name": "Jack_of_Spades",
+    "animated": false
+  },
+  "King_of_Clubs": {
+    "id": "1358037120886767787",
+    "name": "King_of_Clubs",
+    "animated": false
+  },
+  "King_of_Diamonds": {
+    "id": "1358037161575845948",
+    "name": "King_of_Diamonds",
+    "animated": false
+  },
+  "King_of_Hearts": {
+    "id": "1358037179338588330",
+    "name": "King_of_Hearts",
+    "animated": false
+  },
+  "King_of_Spades": {
+    "id": "1358037202893930618",
+    "name": "King_of_Spades",
+    "animated": false
+  },
+  "Queen_of_Clubs": {
+    "id": "1358037212985561128",
+    "name": "Queen_of_Clubs",
+    "animated": false
+  },
+  "Queen_of_Diamonds": {
+    "id": "1358037223907397652",
+    "name": "Queen_of_Diamonds",
+    "animated": false
+  },
+  "Queen_of_Hearts": {
+    "id": "1358037241598967930",
+    "name": "Queen_of_Hearts",
+    "animated": false
+  },
+  "Queen_of_Spades": {
+    "id": "1358037254483738675",
+    "name": "Queen_of_Spades",
+    "animated": false
+  }
+}

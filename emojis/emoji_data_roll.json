@@ -1,0 +1,36 @@
+{"dice_1": {
+    "name": "dice_1",
+    "id": 1384464140541759511,
+    "animated": false
+  },
+  "dice_2": {
+    "name": "dice_2",
+    "id": 1384464152860557332,
+    "animated": false
+  },
+  "dice_3": {
+    "name": "dice_3",
+    "id": 1384464164067475457,
+    "animated": false
+  },
+  "dice_4": {
+    "name": "dice_4",
+    "id": 1384464175719383131,
+    "animated": false
+  },
+  "dice_5": {
+    "name": "dice_5",
+    "id": 1384464187111112704,
+    "animated": false
+  },
+  "dice_6": {
+    "name": "dice_6",
+    "id": 1384464200029442089,
+    "animated": false
+  },
+  "dice_roll": {
+    "name": "dice_roll",
+    "id": 1384463465103757312,
+    "animated": true
+  }
+}

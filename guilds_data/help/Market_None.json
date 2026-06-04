@@ -1,0 +1,27 @@
+{
+    "Title": "\ud83d\udcc2 Market Commands",
+    "Description": "List of commands under the Market category.",
+    "color": 13938423,
+    "fields": [
+        {
+            "Title": "buy",
+            "Value": "Buy a new subscription.",
+            "inline": false
+        },
+        {
+            "Title": "cancle",
+            "Value": "Cancel your subscription.",
+            "inline": false
+        },
+        {
+            "Title": "market",
+            "Value": "View the market board.",
+            "inline": false
+        },
+        {
+            "Title": "subs",
+            "Value": "Manage your market subscriptions.",
+            "inline": false
+        }
+    ]
+}

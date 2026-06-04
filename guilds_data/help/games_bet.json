@@ -1,0 +1,17 @@
+{
+    "Title": "\u2699\ufe0f bet Command",
+    "Description": "Play a game of snake eyes",
+    "color": 5289784,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`bet amount` - Play a game of snake eyes",
+            "inline": false
+        },
+        {
+            "Title": "Aliases",
+            "Value": "roll, snakeeyes, snake",
+            "inline": false
+        }
+    ]
+}

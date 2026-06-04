@@ -1,0 +1,26 @@
+{
+    "user_id":0,
+    "last_login":null,
+    "guild_balance":
+    {
+        "0":0
+    },
+    "subs":
+    {"guild_id":
+        {"item_name":
+            {
+                "price":0,
+                "description":"description",
+                "role" :null
+            }
+        }
+    },
+    "guild_xp":
+    {
+        "guild_id":
+        {
+            "last level":0,
+            "xp":0
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "Title": "\ud83d\udcc2 user_setup Commands",
+    "Description": "List of commands under the user_setup category.",
+    "color": 3066993,
+    "fields": [
+        {
+            "Title": "daily",
+            "Value": "Claim your daily reward.",
+            "inline": false
+        },
+        {
+            "Title": "reg",
+            "Value": "Register yourself in the server system.",
+            "inline": false
+        }
+    ]
+}

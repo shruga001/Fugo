@@ -1,0 +1,17 @@
+{
+    "Title": "\u2699\ufe0f truthanddare Command",
+    "Description": "Play truth or dare.",
+    "color": 5289784,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`truthanddare` - Play truth or dare.",
+            "inline": false
+        },
+        {
+            "Title": "Aliases",
+            "Value": "tnd",
+            "inline": false
+        }
+    ]
+}

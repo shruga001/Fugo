@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f subs Command",
+    "Description": "Manage your market subscriptions.",
+    "color": 13938423,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`subs` - Manage your market subscriptions.",
+            "inline": false
+        }
+    ]
+}

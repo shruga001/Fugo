@@ -1,0 +1,32 @@
+{
+    "Title": "\ud83d\udcc2 misc Commands",
+    "Description": "List of commands under the misc category.",
+    "color": 8388736,
+    "fields": [
+        {
+            "Title": "Leaderboard",
+            "Value": "View the server leaderboard.",
+            "inline": false
+        },
+        {
+            "Title": "bal",
+            "Value": "Check your balance.",
+            "inline": false
+        },
+        {
+            "Title": "catch",
+            "Value": "Catch monsters or items.",
+            "inline": false
+        },
+        {
+            "Title": "give",
+            "Value": "Give coins to another member.",
+            "inline": false
+        },
+        {
+            "Title": "rank",
+            "Value": "Check your rank.",
+            "inline": false
+        }
+    ]
+}

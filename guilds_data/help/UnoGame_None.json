@@ -1,0 +1,12 @@
+{
+    "Title": "\ud83d\udcc2 UnoGame Commands",
+    "Description": "List of commands under the UnoGame category.",
+    "color": 2836711,
+    "fields": [
+        {
+            "Title": "uno",
+            "Value": "Starts a new UNO game with your server members.",
+            "inline": false
+        }
+    ]
+}

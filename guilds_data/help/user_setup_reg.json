@@ -1,0 +1,12 @@
+{
+    "Title": "\u2699\ufe0f reg Command",
+    "Description": "Register yourself in the server system.",
+    "color": 15105570,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`reg` - Register yourself in the server system.",
+            "inline": false
+        }
+    ]
+}
