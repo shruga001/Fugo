@@ -1,5 +1,5 @@
 {
-    "Title": "\ud83d\udcc2 misc Commands",
+    "Title": "📂 misc Commands",
     "Description": "List of commands under the misc category.",
     "color": 8388736,
     "fields": [
@@ -26,6 +26,11 @@
         {
             "Title": "rank",
             "Value": "Check your rank.",
+            "inline": false
+        },
+        {
+            "Title": "help",
+            "Value": "Display help information for any command or category.",
             "inline": false
         }
     ]

@@ -27,6 +27,7 @@ class TruthDareView(View):
         view = TruthDareView()
         glob_fns().save_json(count,"TND/track.json")
         msg = await interaction.channel.send(embed=embed,view=view)
+        self.stop()
     @discord.ui.button(label="Dare",style=discord.ButtonStyle.grey)
     async def dare(self,interaction:discord.Interaction,button:Button):
         try:

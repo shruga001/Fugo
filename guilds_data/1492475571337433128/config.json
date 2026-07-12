@@ -1,0 +1,36 @@
+{
+    "owner": 1208682967225081916,
+    "co_owner": [
+        747716381327360054
+    ],
+    "allowed_channels": [
+        1493225751753785454
+    ],
+    "TND_channel": [
+        1493225601002377306
+    ],
+    "UNO_channel": [
+        1492475576210952407
+    ],
+    "monster_channel": 1493225677778976808,
+    "staff_roles": [
+        1492475571572183132
+    ],
+    "bot_manager_role": [
+        1492475571572183134
+    ],
+    "critical_update_channel": 1492475576210952407,
+    "message_channels": [
+        1492475573262618718
+    ],
+    "treasury": 90,
+    "setup": true,
+    "last_monster": "2026-07-12T17:17:50.708730",
+    "active_monster": true,
+    "current_monster": {
+        "rank": "C",
+        "name": "Goblin",
+        "worth": 200,
+        "image": "https://cdn.discordapp.com/attachments/1353687961400643605/1367430426221744209/goblin.png?ex=68148e53&is=68133cd3&hm=d7c463144d134d7065b5d24ec6a884afdc9bc052fa41facdea42736dc3420d5e&"
+    }
+}

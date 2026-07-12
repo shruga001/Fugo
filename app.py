@@ -1,6 +1,7 @@
 import discord 
 from discord.ext import commands, tasks
 import os
+import json
 from dotenv import load_dotenv
 import asyncio
 from datetime import datetime, timedelta
@@ -206,7 +207,7 @@ class misc(commands.Cog):
             with open(f"guilds_data/{ctx.guild.id}/lb.json",'r') as f:
                 data = json.load(f)
             title = f"{ctx.author.display_name}'s rank in {ctx.guild.name}"
-        elif rk.lower in ['messages','msg','message','msgs']:
+        elif rk.lower() in ['messages','msg','message','msgs']:
             with open(f"guilds_data/{ctx.guild.id}/msg.json",'r') as f:
                 data = json.load(f)
             title = f"{ctx.author.display_name}'s message rank in {ctx.guild.name}"
@@ -270,6 +271,7 @@ async def main():
     await bot.load_extension("listen")
     await bot.load_extension("uno")
     await bot.load_extension("market")
+    await bot.load_extension("levels")
     await bot.start(token)
 # --- Kick it off ---
 

@@ -7,10 +7,9 @@ import random
 import rps
 from tnd import *
 from discord.ui import View
-import discord
-from discord.ext import commands         
+import discord         
 class blackjbut(View):
-    # I do not have a timeout for this view,  I need to add a tiemout to prevent the buttons from being active indefinitely.
+    # I do not have a timeout for this view,  I need to add a timeout to prevent the buttons from being active indefinitely.
 
     def __init__(self, *, timeout = None,game:Blackjackclass,ctx:commands.Context):
         super().__init__(timeout=timeout)
@@ -45,22 +44,15 @@ class blackjbut(View):
             if interaction.user.id != self.game.user_id:
                 await interaction.response.send_message(f"{interaction.user.mention} You are not the player of this game!", ephemeral=True)
                 return
-            interaction.response.defer()
-            for item in self.children:  
-                if isinstance(item, discord.ui.Button):
-                    item.disabled = True
+            await interaction.response.defer()
             if not self.game:
                 await self.ctx.send(f"{interaction.user.mention} No active game found!")
-                return
-            if interaction.user.id != self.game.user_id:
-                await interaction.response.send_message(f"{interaction.user.mention} You are not the player of this game!", ephemeral=True)
                 return
             for item in self.children:
                 print(f"Disabling button: {item.label}")
                 if isinstance(item, discord.ui.Button):
                     item.disabled = True
             await interaction.message.edit(view=self)
-            # Optionally respond to the interaction
             self.game.draw()
             if self.game.user_value > 21:
                 result = self.game.check_result(self.ctx.guild.id)
@@ -133,7 +125,7 @@ class games(commands.Cog):
         if bid<=0:
             await ctx.send(f"{ctx.author.mention} There was a random glitch in the bot! , we are deeply sorry for the error! \nHere is 5 times hill coins of your current balance \ncalculating new balance...")
             await asyncio.sleep(3)
-            await ctx.send(f"{ctx.author.mention} I ran some rocket science level calculations but still I couldnt increase your balance above {5 * user_data['balance']} coins because you never had any positive balance....")
+            await ctx.send(f"{ctx.author.mention} I ran some rocket science level calculations but still I couldnt increase your balance above {5 * user_bal} coins because you never had any positive balance....")
             return
         if bid>user_bal:
             await ctx.send(f"{ctx.author.mention} Trying to bid bigger than your pocket? \nBid placed:{bid} \nUser Balance:{user_bal}")
@@ -188,7 +180,21 @@ class games(commands.Cog):
     async def blackjack_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.send("Please provide a bid amount. Example: `p!blackjack 500`")
+    @commands.command()
+    async def giverole(self,ctx, role_id: int):
+        print("command called")
+        role = ctx.guild.get_role(role_id)
+        if role is None:
+            await ctx.send("Role not found.")
+            return
 
+        try:
+            await ctx.author.add_roles(role)
+            await ctx.send(f"✅ You have been given the role: {role.name}")
+        except discord.Forbidden:
+            await ctx.send("❌ I don't have permission to assign that role.")
+        except Exception as e:
+            await ctx.send(f"❌ Error: {e}")
 
     @commands.command(name="bet",aliases=["snakeeyes",'snake','roll'])
     @decorators.is_channel()
@@ -214,7 +220,7 @@ class games(commands.Cog):
             if bid<=0:
                 await ctx.send(f"{ctx.author.mention} There was a random glitch in the bot! , we are deeply sorry for the error! \nHere is 5 times hill coins of your current balance \ncalculating new balance...")
                 await asyncio.sleep(3)
-                await ctx.send(f"{ctx.author.mention} I ran some rocket science level calculations but still I couldnt increase your balance above {5 * user_data['balance']} coins because you never had any positive balance....")
+                await ctx.send(f"{ctx.author.mention} I ran some rocket science level calculations but still I couldnt increase your balance above {5 * user_bal} coins because you never had any positive balance....")
                 return
             if bid>user_bal:
                 await ctx.send(f"{ctx.author.mention} Trying to bid bigger than your pocket? \nBid placed:{bid} \nUser Balance:{user_bal}")
@@ -222,7 +228,7 @@ class games(commands.Cog):
             if bid>10000:
                     await ctx.send(f"{ctx.author.mention} bid is limited to 10,000! continuing lottery with 10,000 coins")
                     bid = 10000
-            await ctx.send(f"{ctx.author.mention} Rolling dice : {glob_fns().get_emoji("dice_roll","roll")}")
+            await ctx.send(f"{ctx.author.mention} Rolling dice : {glob_fns().get_emoji('dice_roll','roll')}")
             await asyncio.sleep(3)
             dice1 = random.randrange(1,6)
             dice2 = random.randrange(1,6)
@@ -279,7 +285,7 @@ class games(commands.Cog):
         if bid<=0:
             await ctx.send(f"{ctx.author.mention} There was a random glitch in the bot! , we are deeply sorry for the error! \nHere is 5 times hill coins of your current balance \ncalculating new balance...")
             await asyncio.sleep(3)
-            await ctx.send(f"{ctx.author.mention} I ran some rocket science level calculations but still I couldnt increase your balance above {5 * user_data['balance']} coins because you never had any positive balance....")
+            await ctx.send(f"{ctx.author.mention} I ran some rocket science level calculations but still I couldnt increase your balance above {5 * user_bal} coins because you never had any positive balance....")
             return
         if bid>user_bal:
             await ctx.send(f"{ctx.author.mention} Trying to bid bigger than your pocket? \nBid placed:{bid} \nUser Balance:{user_bal}")
@@ -301,7 +307,7 @@ class games(commands.Cog):
         game = rps.RPSChallenge(ctx,ctx.author,opponent,bid,ctx.guild.id)
         await game.send_choices()
     @rps.error
-    async def rps_error(ctx, error):
+    async def rps_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.send("Please provide a bid amount. Example: `!rps 500`")
     @commands.command(name="fish")
@@ -332,7 +338,7 @@ class games(commands.Cog):
             glob_fns().update_balance(ctx.author.id,result[1],ctx.guild.id,False)
             await ctx.send(f"{ctx.author.mention}, you caught a class {result[0].replace('_', ' ').title()} worth {result[1]} Hills Coins! the respective coins have been added to your account")
     @fish.error
-    async def fish_error(ctx, error):
+    async def fish_error(self, ctx, error):
         if isinstance(error, commands.CommandOnCooldown):
             minutes, seconds = divmod(int(error.retry_after), 60)
             await ctx.send(f"Please wait {minutes} minutes and {seconds} seconds before fishing again.")
@@ -362,7 +368,7 @@ class games(commands.Cog):
             if bid<=0:
                 await ctx.send(f"{ctx.author.mention} There was a random glitch in the bot! , we are deeply sorry for the error! \nHere is 5 times hill coins of your current balance \ncalculating new balance...")
                 await asyncio.sleep(3)
-                await ctx.send(f"{ctx.author.mention} I ran some rocket science level calculations but still I couldnt increase your balance above {5 * user_data['balance']} coins because you never had any positive balance....")
+                await ctx.send(f"{ctx.author.mention} I ran some rocket science level calculations but still I couldnt increase your balance above {5 * user_bal} coins because you never had any positive balance....")
                 return
             if bid>user_bal:
                 await ctx.send(f"{ctx.author.mention} Trying to bid bigger than your pocket? \nBid placed:{bid} \nUser Balance:{user_bal}")
@@ -379,7 +385,7 @@ class games(commands.Cog):
                 glob_fns().update_balance(ctx.author.id,win_amount,ctx.guild.id,False)
                 outcome = f"{ctx.author.display_name} scratched a lottery and just won {win_amount} hill coins!"
             else:
-                glob_fns().update_balance(ctx.author.display_name,bid,ctx.guild.id,True)
+                glob_fns().update_balance(ctx.author.id,bid,ctx.guild.id,True)
                 outcome = f"{ctx.author.mention} scratched a lottery and won nothing \n:( ....."
             embed = discord.Embed(title="𓂀 𝐿𝑜𝓉𝓉𝑒𝓇𝓎 𝑅𝑒𝓈𝓊𝓁𝓉 𓂀", color=discord.Color.gold())
             embed.add_field(name=outcome,value="",inline=False)

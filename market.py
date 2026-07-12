@@ -39,13 +39,13 @@ class MarketView(View):
     @discord.ui.button(label='⬅ Previous', style=discord.ButtonStyle.blurple)
     async def previous(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.page -= 1
-        new_view = MarketView(self.items, self.page)
+        new_view = MarketView(self.items, self.page, self.title)
         await interaction.response.edit_message(embed=new_view.get_page_embed(), view=new_view)
 
     @discord.ui.button(label='Next ➡', style=discord.ButtonStyle.blurple)
     async def next(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.page += 1
-        new_view = MarketView(self.items, self.page)
+        new_view = MarketView(self.items, self.page, self.title)
         await interaction.response.edit_message(embed=new_view.get_page_embed(), view=new_view)
 
 

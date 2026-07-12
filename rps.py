@@ -57,8 +57,8 @@ class RPSChallengeBot():
         view = RPSBotChoiceView(self)
         self.message = await self.ctx.send(f"{self.ctx.author.mention} choose your move against bot!", view=view)
         await asyncio.sleep(30)
-        if not view.finished:
-            self.ctx.send(f"{self.author.mention} you ran out of time!")
+        if not self.finished:
+            await self.ctx.send(f"{self.author.mention} you ran out of time!")
             view.disable_all_items()
             await self.message.edit(view=view)
     async def record_choice(self,user,choice):
@@ -76,7 +76,7 @@ class RPSChallengeBot():
         if result == "author":
             glob_fns().update_balance(self.author.id,self.bet,self.guild_id,False)
             outcome = f"{self.author.mention} wins! (Bot chose {bot_choice})"
-        if result == "opponent":
+        elif result == "opponent":
             glob_fns().update_balance(self.author.id,self.bet,self.guild_id,True)
             outcome = f"Bot wins! (Bot chose {bot_choice})"
         else:
@@ -142,4 +142,3 @@ class RPSChallenge:
             return "author"
         else:
             return "opponent"
-            

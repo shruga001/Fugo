@@ -316,18 +316,18 @@ class Setup(commands.Cog):
         })
         glob_fns().save_json(market_data, market_path)
         await i.response.send_message(f"✅ Item '{item_name}' added to the market for {item_price} coins.", ephemeral=False)
-    @app_commands.command(name="Add rank",description="Add a new rank in levelling system")
-    async def add_rank(self,i:discord.Interaction,Level:int,rank_role:discord.Role):
-        if Level>100:
-            i.response.send_message("Ranks can only be added upto level 100 as of now")
-            return
-        rank_file = f"guilds_data/{i.guild_id}/guild_ranks.json"
-        if not os.path.exists(rank_file):
-            await i.response.send_message("❌ Ranks data file not found. Please run setup first.", ephemeral=True)
-            return
-        with open(rank_file, "r") as f:
-            market_data = json.load(f)
-        market_data.update({str(Level):rank_role.id})
-        glob_fns().save_json(market_data, rank_file)
-        await i.response.send_message(f"✅ Rank '{rank_role.mention}' added to the Ranks, run p!ranks for all ranks added in server", ephemeral=False)
+    # @app_commands.command(name="Add rank",description="Add a new rank in levelling system")
+    # async def add_rank(self,i:discord.Interaction,Level:int,rank_role:discord.Role):
+    #     if Level>100:
+    #         i.response.send_message("Ranks can only be added upto level 100 as of now")
+    #         return
+    #     rank_file = f"guilds_data/{i.guild_id}/guild_ranks.json"
+    #     if not os.path.exists(rank_file):
+    #         await i.response.send_message("❌ Ranks data file not found. Please run setup first.", ephemeral=True)
+    #         return
+    #     with open(rank_file, "r") as f:
+    #         market_data = json.load(f)
+    #     market_data.update({str(Level):rank_role.id})
+    #     glob_fns().save_json(market_data, rank_file)
+    #     await i.response.send_message(f"✅ Rank '{rank_role.mention}' added to the Ranks, run p!ranks for all ranks added in server", ephemeral=False)
 async def setup(bot): await bot.add_cog(Setup(bot)) 
