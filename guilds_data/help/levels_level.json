@@ -1,0 +1,22 @@
+{
+    "Title": "📊 level — Check Your Progress",
+    "Description": "Show your current level, XP, and progress toward the next level. Also displays your current rank title if one is assigned.",
+    "color": 3447003,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`ft!level` or `ft!myrank` or `ft!xp`",
+            "inline": false
+        },
+        {
+            "Title": "Aliases",
+            "Value": "`myrank`, `xp`",
+            "inline": false
+        },
+        {
+            "Title": "Note",
+            "Value": "XP is earned by chatting in the server's message channels. Each message gives between 5-50 XP!",
+            "inline": false
+        }
+    ]
+}

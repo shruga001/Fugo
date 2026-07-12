@@ -1,0 +1,42 @@
+{
+    "Title": "📂 levels Commands",
+    "Description": "List of commands under the levels category — track XP, check ranks, and manage the levelling system.",
+    "color": 3447003,
+    "fields": [
+        {
+            "Title": "ranklist",
+            "Value": "Display every rank title and the level at which it unlocks.",
+            "inline": false
+        },
+        {
+            "Title": "level",
+            "Value": "Show your current level, XP, and progress toward the next level.",
+            "inline": false
+        },
+        {
+            "Title": "add_rank (/)",
+            "Value": "Assign a rank title to a specific level (staff/owner only).",
+            "inline": false
+        },
+        {
+            "Title": "remove_rank (/)",
+            "Value": "Remove a rank title from a specific level (staff/owner only).",
+            "inline": false
+        },
+        {
+            "Title": "set_xp (/)",
+            "Value": "Set a user's XP to a specific value (staff/owner only).",
+            "inline": false
+        },
+        {
+            "Title": "set_level (/)",
+            "Value": "Set a user's level directly (staff/owner only).",
+            "inline": false
+        },
+        {
+            "Title": "user_level (/)",
+            "Value": "Check the level & XP progress of a specific user (staff/owner only).",
+            "inline": false
+        }
+    ]
+}

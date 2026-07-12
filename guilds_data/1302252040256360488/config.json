@@ -1,0 +1,30 @@
+{
+    "owner": 1264638511278198919,
+    "co_owner": [
+        1264638511278198919
+    ],
+    "allowed_channels": [
+        1319731836863250492
+    ],
+    "TND_channel": [
+        1319731836863250492
+    ],
+    "UNO_channel": [
+        1319731836863250492
+    ],
+    "monster_channel": 1302252852881915916,
+    "staff_roles": [
+        1311701588276154458,
+        1302253460493697084
+    ],
+    "bot_manager_role": [],
+    "critical_update_channel": 1353687961400643605,
+    "message_channels": [
+        1302252040256360491
+    ],
+    "treasury": 0,
+    "setup": true,
+    "last_monster": null,
+    "active_monster": false,
+    "current_monster": {}
+}

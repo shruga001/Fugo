@@ -1,0 +1,22 @@
+{
+    "Title": "🏅 ranklist — View All Ranks",
+    "Description": "Display every rank title and the level at which it unlocks. If no custom ranks are set up for the guild, shows the global defaults.",
+    "color": 15844367,
+    "fields": [
+        {
+            "Title": "Usage",
+            "Value": "`ft!ranklist` or `ft!ranks` or `ft!rank_info`",
+            "inline": false
+        },
+        {
+            "Title": "Aliases",
+            "Value": "`ranks`, `rank_info`",
+            "inline": false
+        },
+        {
+            "Title": "Note",
+            "Value": "Ranks are grouped into pages of 10 to keep the embed clean.",
+            "inline": false
+        }
+    ]
+}
