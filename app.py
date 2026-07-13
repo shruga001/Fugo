@@ -26,24 +26,16 @@ class tasks(commands.Cog):
     @tasks.loop(minutes=525600)
     async def monster_drop(self):
         try:
-            print("Running monster drop task")
             for discord_guild in self.bot.guilds:
                 if not os.path.exists(f"guilds_data/{discord_guild.id}/config.json"):
-                    print(f"Guild data for {discord_guild.name} not found, skipping.")
                     continue
-                print(f"Checking guild: {discord_guild.name} (ID: {discord_guild.id})")
                 guild_data = glob_fns().load_guild(str(discord_guild.id))
                 if not guild_data.get("setup", False):
-                    print(f"Guild {discord_guild.name} is not set up, skipping.")
                     continue
-                print(f"Loaded guild data for {discord_guild.name}: {guild_data}")
                 monster_channel_id = guild_data.get("monster_channel", 0)
-                print(f"Monster channel ID for {discord_guild.name}: {monster_channel_id}")
                 if monster_channel_id == 0:
                     continue
-                print(f"Fetching channel for monster drops in {discord_guild.name}")
                 channel = discord_guild.get_channel(monster_channel_id)
-                print(f"Channel fetched: {channel}")
                 if channel is None:
                     print(f"[{discord_guild.name}] Monster channel {monster_channel_id} missing. Notifying staff.")
                     staff_r = ""
@@ -64,10 +56,8 @@ class tasks(commands.Cog):
                 if last_monster:
                     last_monster_dt = datetime.fromisoformat(last_monster)
                     time_diff = now - last_monster_dt
-                    print(f"[{discord_guild.name}] Time since last monster: {time_diff}")
                     if time_diff < timedelta(minutes=525600):
                         continue  
-                print(f"[{discord_guild.name}] Spawning new monster.")
                 guild_data["active_monster"] = True
 
                 choice_monster = ['D'] * 30 + ['C'] * 20 + ['B'] * 15 + ['A'] * 10 + ['S'] * 5
@@ -131,9 +121,7 @@ class tasks(commands.Cog):
                     
     @monster_drop.before_loop
     async def before_monster_drop(self):
-        print("Waiting for the bot to be ready before starting the monster drop task.")
         await self.bot.wait_until_ready()
-        print("Bot is ready, starting the monster drop task.")
 
 class misc(commands.Cog):
     def __init__(self,bot:commands.Bot):
@@ -145,7 +133,6 @@ class misc(commands.Cog):
         try:
             g_data = glob_fns().load_guild(str(ctx.guild.id))
             if ctx.channel.id != g_data['monster_channel']:
-                print(f"User {ctx.author.id} tried to catch a monster in the wrong channel.")
                 return
             if not g_data['active_monster']:
                 return await ctx.send(f"{ctx.author.mention} there is no active monster in this channel!")
@@ -164,7 +151,6 @@ class misc(commands.Cog):
     @decorators.is_user()
     async def leaderboard(self,ctx:commands.Context,lb:str = None):
         if lb is None:
-            print("Loading default leaderboard")
             with open(f"guilds_data/{ctx.guild.id}/lb.json",'r') as f:
                 data = json.load(f)
             title = f"{ctx.guild.name}'s Leaderboard"
@@ -175,28 +161,19 @@ class misc(commands.Cog):
         else:
             await ctx.send("Invalid arguments passed in leaderboard command!")
             return
-        print("Sorting leaderboard data")
         sorted_users = sorted(data.items(), key=lambda x: x[1], reverse=True)[:10]
-        print(sorted_users)
-        print("Creating embed for leaderboard")
         embed = discord.Embed(
             title=title,
             description="",
             color=discord.Color.pink()
             )
-        print("Adding fields to embed")
         for idx, (user_id, balance) in enumerate(sorted_users, start=1):
-            print(f"Fetching user {user_id} for leaderboard embed")
             user = bot.get_user(int(user_id))
-            print(user)
             if not user:
                 try:
-                    print(f"User {user_id} not found in cache, fetching from API")
                     user = await bot.fetch_user(int(user_id))
                 except discord.NotFound:
-                    print(f"User {user_id} not found, skipping")
                     continue
-            print(f"Adding user {user.display_name} to leaderboard embed")
             embed.add_field(name=f"#{idx}: {user.display_name}", value=f"Balance: {balance} Hills Coins", inline=False)
         await ctx.send(embed=embed)
     @commands.command(name="rank")
@@ -214,7 +191,6 @@ class misc(commands.Cog):
         else:
             return await ctx.send("invalid argument passed!")
         sorted_users = sorted(data.items(), key=lambda x: x[1], reverse=True)
-        print(sorted_users)
         user_rank = next((i for i, (user, _) in enumerate(sorted_users) if user == str(ctx.author.id)), -1)
         user_rank += 1  # because enumerate is 0-based
         if user_rank <= 0:
@@ -249,19 +225,14 @@ class misc(commands.Cog):
     @decorators.is_channel()
     async def help(self,ctx:commands.Context,category:str = "None",command:str="None"):
         try:
-            print(f"Help command invoked by {ctx.author.name} in category '{category}' for command '{command}'")
             em, embed =  glob_views().embed_view(f"help/{category}_{command}")
             if em:
-                print("em = "+ str(em))
-                print(embed.to_dict())
                 return await ctx.send(embed=embed)
             else:
                 await ctx.send(f"{ctx.author.mention} no help file found for {category} {command} , try /help to see all commands")
         except Exception as e:
             print(f"Error in help command: {e}")
             await ctx.send(f"{ctx.author.mention} an error occurred while processing your request. Please try again later.")
-            print(type(embed))
-            print(str(embed))
 async def main():
     await bot.add_cog(tasks(bot))
     await bot.add_cog(misc(bot))

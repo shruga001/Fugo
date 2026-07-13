@@ -1,5 +1,5 @@
 .vscode/
-__pychache__/
+__pycache__/
 assets/
 cards/
 cropped/
@@ -21,3 +21,4 @@ prev.py
 test.py
 .env
 gift.py
+implementation_plan.md

@@ -6,12 +6,10 @@ import random
 class Listeners(commands.Cog):
     def __init__(self,bot:commands.Bot):
         self.bot = bot
-        print("Listener cog registered")
     @commands.Cog.listener()
     async def on_ready(self):
         await self.bot.tree.sync()
         activity = discord.Game(name="in the hills with my nakamas!")
-        print(f'Logged in as {self.bot.user}')
         await self.bot.change_presence(status=discord.Status.online, activity=activity)
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
@@ -26,7 +24,6 @@ class Listeners(commands.Cog):
                 return
             guild = glob_fns().load_guild(guild_id)
             if not guild.get("setup"):
-                print(f"Guild {guild_id} is not set up, ignoring message.")
                 return
             if message.channel.id not in guild.get("message_channels", []):
                 return

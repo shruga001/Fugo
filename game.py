@@ -16,7 +16,6 @@ class blackjbut(View):
         self.game = game
         self.ctx = ctx
         self.message = None
-        print("Registered children:", self.children)
     async def on_timeout(self):
         for item in self.children:
             if isinstance(item, discord.ui.Button):
@@ -35,7 +34,6 @@ class blackjbut(View):
         embed.add_field(name="Final result:",value=f"***{result}*** \nbid placed - {self.game.bet} hill coins",inline=False)
         embed.set_image(url="https://clientarea.evolution.com/netent/wp-content/nfs-uploads/uploads/cdn/3b662a4ba2d3f74dc7e050836523a6f6/02_banner_blackjack_720x300_blackjackhtml5.jpg")
         embed.set_footer(text="If you feel like there is any fault in the game above , feel free to contact our backend team via your server adminstration.")
-        print("Sending embed to user")
         await self.ctx.send(f"{self.ctx.author.mention}",embed=embed)
         self.stop()
     @discord.ui.button(label="Hit", style=discord.ButtonStyle.green)
@@ -49,7 +47,6 @@ class blackjbut(View):
                 await self.ctx.send(f"{interaction.user.mention} No active game found!")
                 return
             for item in self.children:
-                print(f"Disabling button: {item.label}")
                 if isinstance(item, discord.ui.Button):
                     item.disabled = True
             await interaction.message.edit(view=self)
@@ -182,7 +179,6 @@ class games(commands.Cog):
             await ctx.send("Please provide a bid amount. Example: `p!blackjack 500`")
     @commands.command()
     async def giverole(self,ctx, role_id: int):
-        print("command called")
         role = ctx.guild.get_role(role_id)
         if role is None:
             await ctx.send("Role not found.")
@@ -347,7 +343,6 @@ class games(commands.Cog):
     @decorators.is_user()
     async def lottery(self,ctx:commands.Context,bid:str):
         try:
-            print("inside lottery command")
             user_data = glob_fns().load_json(f"users_data/{ctx.author.id}.json")
             user_data = glob_fns().load_json(f"users_data/{ctx.author.id}.json")
             user_bal = user_data['guild_balance'][f"{ctx.guild.id}"]

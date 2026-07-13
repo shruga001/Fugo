@@ -1,0 +1,17 @@
+{
+    "Title": "📂 UnoGame Commands",
+    "Description": "List of commands under the UnoGame category.",
+    "color": 2836711,
+    "fields": [
+        {
+            "Title": "uno",
+            "Value": "Starts a new UNO game. React with ✅ to join. Bots fill empty slots.",
+            "inline": false
+        },
+        {
+            "Title": "call",
+            "Value": "Call UNO before playing your second-last card to avoid a +4 penalty.",
+            "inline": false
+        }
+    ]
+}

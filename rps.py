@@ -62,7 +62,6 @@ class RPSChallengeBot():
             view.disable_all_items()
             await self.message.edit(view=view)
     async def record_choice(self,user,choice):
-        print("inside record choice")
         lose_to = {"rock":"paper","paper":"scissors","scissors":"rock"}
         win_against = {v:k for k,v in lose_to.items()}
         bot_outcomes = (
@@ -71,7 +70,6 @@ class RPSChallengeBot():
             [lose_to[choice]] * 4
         )
         bot_choice = random.choice(bot_outcomes)
-        print(bot_choice)
         result = RPSChallenge.determine_winner_static(choice,bot_choice)
         if result == "author":
             glob_fns().update_balance(self.author.id,self.bet,self.guild_id,False)
@@ -109,7 +107,6 @@ class RPSChallenge:
             await self.message2.edit(view = self.view2)
     async def record_choice(self,user:discord.Member,choice):
         self.choices[user.id] = choice
-        print(self.choices)
         if len(self.choices)==2:
             await self.finish_game()
     async def finish_game(self):

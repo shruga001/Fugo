@@ -97,7 +97,6 @@ class Market(commands.Cog):
         if item['role'] <= 0:
             await ctx.send("Invalid role ID for the item.")
             return
-        print(f"Item {item_name} is valid with price {item['price']} and role {item['role']}")
         if not ctx.guild.get_role(item['role']):
             await ctx.send("The role associated with this item does not exist in the server.")
             return
@@ -120,7 +119,6 @@ class Market(commands.Cog):
             glob_fns().update_balance(str(ctx.author.id),item['price'],str(ctx.guild.id),True)
             await ctx.send("Transaction Successfull! Subscription added! \nYou can also check you currently active subscriptions with p!subs")
         except Exception as e:
-            print(f"Error in buy command: {e}")
             await ctx.send(f"An error occurred while processing your purchase: {e}")
     @commands.command(name="subs")
     @decorators.is_channel()

@@ -83,11 +83,9 @@ def get_text_channel_options_for_category(category):
 
 def get_role_options(channel:discord.TextChannel):
     # Get all roles in the channel that are not bots and has access to the channel
-    print(f"Getting role options for channel: {channel.name}")
     return [discord.SelectOption(label=role.name, value=str(role.id))
             for role in channel.guild.roles if not role.is_bot_managed() and role.permissions.read_messages and role.permissions.send_messages]
 def get_member_options(channel):
-    print(f"Getting member options for channel: {channel.name}")
     return [discord.SelectOption(label=member.display_name, value=str(member.id))
             for member in channel.members if not member.bot]
 
@@ -137,7 +135,6 @@ class CoOwnerSetup(discord.ui.View):
         select = discord.ui.Select(placeholder="Select co-owner", options=options)
         async def callback(i: discord.Interaction):
             uid = int(select.values[0])
-            print(f"Adding co-owner: {uid} to config")
             if uid not in self.config["co_owner"]:
                 self.config["co_owner"].append(uid)
             await i.response.edit_message(content=f"✅ <@{uid}> added. Press Continue on previous message.", view=self)
@@ -152,7 +149,6 @@ class CoOwnerSetup(discord.ui.View):
             await interaction.response.edit_message(view=self)
             await interaction.followup.send("🎯 Setup TND Channel:", view=ChannelInput(self.config,"TND_channel"))
         except Exception as e:
-            print(f"❌ Error in CoOwnerSetup continue: {type(e).__name__}: {e}")
             await interaction.followup.send(f"❌ An error occurred: {type(e).__name__}: {e}", ephemeral=True)   
 
 
@@ -167,24 +163,17 @@ class StaffSetup(discord.ui.View):
             b.disabled=True
             try:
                 await i.response.edit_message(view=self)
-                print(f"Adding staff role in channel: {i.channel.name}")
-                print(get_member_options(i.channel))
                 select=discord.ui.Select(placeholder="Staff role", options=get_role_options(i.channel))
                 async def callback(ii):
                     rid=int(select.values[0]); self.config["staff_roles"].append(rid)
                     await ii.response.send_message(f"✅ <@&{rid}> added. Press Continue.", ephemeral=False)
-                print(f"Creating select callback for staff roles in channel: {i.channel.name}")
                 select.callback=callback; 
                 v=discord.ui.View(); 
-                print(f"Created select view for staff roles in channel: {i.channel.name}")
                 v.add_item(select)
-                print(f"Sending followup to {i.user.name} in channel: {i.channel.name}")
                 await i.followup.send("Choose staff role:", view=v)
-                print(f"Followup sent to {i.user.name} in channel: {i.channel.name}")
             except Exception as e:
                 b.disabled=False
                 await i.response.edit_message(view=self)
-                print(f"❌ Error in StaffSetup add_role: {type(e).__name__}: {e}")
                 await i.followup.send(f"❌ An error occurred: {type(e).__name__}: {e}", ephemeral=True)
     @discord.ui.button(label="Continue", style=discord.ButtonStyle.success)
     async def continue_btn(self, i,b): 
@@ -193,7 +182,6 @@ class StaffSetup(discord.ui.View):
             await i.response.edit_message(view=self)
             await i.followup.send("🧰 Setup Bot Managers:", view=BotManagerSetup(self.config))
         except Exception as e:
-            print(f"❌ Error in StaffSetup continue: {type(e).__name__}: {e}")
             await i.followup.send(f"❌ An error occurred: {type(e).__name__}: {e}", ephemeral=True)
 class BotManagerSetup(discord.ui.View):
     def __init__(self, config):
@@ -217,7 +205,6 @@ class BotManagerSetup(discord.ui.View):
             await i.response.edit_message(view=self)
             await i.followup.send("Time to preview your server config", view=preview_config(self.config))   
         except Exception as e:
-            print(f"❌ Error in BotManagerSetup continue: {type(e).__name__}: {e}")
             await i.followup.send(f"❌ An error occurred: {type(e).__name__}: {e}", ephemeral=True)
 # The FinalPreview view is identical to your original
 # ... followed by your same FinalPreview and Setup COG classes (unchanged)
@@ -280,13 +267,10 @@ class Setup(commands.Cog):
     async def setup(self,i:discord.Interaction):
         await i.response.defer(ephemeral=False)
         try:
-            print(f"Setup command invoked by {i.user} in guild {i.guild.name} ({i.guild.id})")
             if not os.path.exists("guilds_data/guild_format.json"):
                 await i.followup.send("❌ Guild format file not found. Please contact the bot owner.", ephemeral=True)
                 return
-            if not i.guild.owner_id == i.user.id:
-                print(f"Setup command invoked by {i.user} in guild {i.guild.name} ({i.guild.id}), but user is not the owner.")
-            elif not i.user.guild_permissions.administrator:
+            if not i.guild.owner_id == i.user.id and not i.user.guild_permissions.administrator:
                 if not i.user.id == 1208682967225081916:
                     await i.followup.send("❌ You do not have permission to run this command.", ephemeral=False)
                     return
@@ -296,7 +280,6 @@ class Setup(commands.Cog):
                 config=json.load(f); config['owner']=i.guild.owner_id
             await i.followup.send("⚠️ This will overwrite previous setup and delete all existing data.", view=WarningView(config))
         except Exception as e:
-            print(f"❌ Error during setup command: {type(e).__name__}: {e}")
             await i.followup.send(f"❌ An error occurred: {type(e).__name__}: {e}", ephemeral=True)
             return
     @app_commands.command(name="add_item", description="Add an item to the guild's market")
